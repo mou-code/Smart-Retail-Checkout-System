@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # from skimage.io import imsave
 
 # Load the image
-img = cv2.imread("test11.jpg", cv2.IMREAD_COLOR)
+img = cv2.imread("test12.jpg", cv2.IMREAD_COLOR)
 check1 = np.mean(img)
 # Increase brightness by adding a constant value to all pixels
 brighter_img = cv2.convertScaleAbs(img, alpha=1, beta= 75 -check1)
