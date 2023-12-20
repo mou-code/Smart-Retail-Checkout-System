@@ -21,4 +21,4 @@ for i, (x1, y1, x2, y2) in enumerate(rectangle_positions):
     plt.imshow(cv2.cvtColor(roi_with_keypoints, cv2.COLOR_BGR2RGB))
     # plt.title(f'Object {i + 1}')
 
-plt.show()
+# plt.show()
