@@ -27,12 +27,13 @@ def preprocess_image(img):
     img_eq = cv2.cvtColor(lab_img_eq, cv2.COLOR_LAB2BGR)
 
     # Apply Gaussian blur for noise reduction
-    img_eq = cv2.GaussianBlur(img_eq, (3, 3), 0)
+    # img_eq = cv2.GaussianBlur(img_eq, (3, 3), 0)
+    bilateral_image = cv2.bilateralFilter(img_eq, d=20, sigmaColor=100, sigmaSpace=70)
 
     # Normalize pixel values to the range [0, 1]
-    img_eq = img_eq / 255.0
+    bilateral_image = bilateral_image / 255.0
 
-    return img_eq
+    return bilateral_image
 
 
 def load_dataset_from_excel(excel_path):
