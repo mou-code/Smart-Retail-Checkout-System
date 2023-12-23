@@ -24,7 +24,7 @@ def preprocess_image(img):
     img_eq = cv2.cvtColor(lab_img_eq, cv2.COLOR_LAB2BGR)
 
     # Apply Gaussian blur for noise reduction
-    img_eq = cv2.GaussianBlur(img_eq, (5, 5), 0)
+    img_eq = cv2.GaussianBlur(img_eq, (3, 3), 0)
 
     # Normalize pixel values to the range [0, 1]
     img_eq = img_eq / 255.0

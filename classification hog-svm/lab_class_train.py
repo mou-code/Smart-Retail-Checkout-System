@@ -95,4 +95,3 @@ def run_experiment(excel_path):
 
 excel_path = 'labels.xlsx'
 run_experiment(excel_path)
-
