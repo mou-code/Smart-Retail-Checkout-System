@@ -13,6 +13,37 @@ random_seed = 42
 random.seed(random_seed)
 np.random.seed(random_seed)
 
+
+import os
+
+def evaluate_model(model, test_path):
+    correct_predictions = 0
+    total_images = 0
+
+    for class_folder in os.listdir(test_path):
+        class_folder_path = os.path.join(test_path, class_folder)
+
+        if os.path.isdir(class_folder_path):
+            for img_name in os.listdir(class_folder_path):
+                img_path = os.path.join(class_folder_path, img_name)
+
+                img = cv2.imread(img_path)
+                features = extract_hog_features(img)
+                predicted_label = model.predict([features])[0]
+                print("expected: ",str(class_folder), ",,,predicted:" ,str(predicted_label) )
+                
+
+                if str(predicted_label) == str(class_folder):
+                    correct_predictions += 1
+
+                total_images += 1
+
+
+    accuracy = correct_predictions / total_images
+    print(f"Accuracy: {accuracy * 100:.2f}%")
+    print("total test images: " ,total_images , " correct: ",correct_predictions , " false: ",total_images-correct_predictions)
+
+
 def extract_hog_features(img):
 
     img = cv2.resize(img, target_img_size)
@@ -32,22 +63,10 @@ model = joblib.load('groceries_classifier_model.pkl')
 # model = cv2.ml.SVM_load("svm_model.xml")
 
 
-test_img_path = r'../dataset/test/100_443_1702949768.095945.jpg'
-img = cv2.imread(test_img_path)
-features = extract_hog_features(img)  # be careful of the choice of feature set
-
-print(model.predict([features]))
+# Assuming your test images are in a folder named 'test_dataset'
+test_dataset_path = r'../dataset/test'
+evaluate_model(model, test_dataset_path)
 
 
 
-#svm using cv2
-# # Reshape the features array to be a single-row 2D array
-# features = np.array(features, dtype=np.float32)
-# features = features.reshape(1, -1)
 
-# # Use the predict method
-# response = model.predict(features)
-
-# # The result is a tuple where the first element contains the predicted label
-# predicted_label = response[1][0][0]
-# print(predicted_label)

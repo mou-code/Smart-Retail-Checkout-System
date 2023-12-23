@@ -56,9 +56,9 @@ def crop_and_save_images(contour_file, input_image_folder, output_folder):
 
 # if __name__ == "__main__":
 #     # Adjust the paths and directories
-#     contour_file_path = r'../dataset/train/pos_imgs/zaza.txt'
-#     input_image_folder_path = r'../dataset/train/pos_imgs/zaza'
-#     output_folder_path = r'../dataset/train/pos_imgs/cropped/zaza'
+#     contour_file_path = r'../dataset/HD/zaza/HDzaza.txt'
+#     input_image_folder_path = r'../dataset/HD/zaza'
+#     output_folder_path = r'../dataset/train/pos_imgs/croppedHD/zaza'
 
 #     # Create the output folder if it doesn't exist
 #     os.makedirs(output_folder_path, exist_ok=True)
@@ -136,57 +136,6 @@ def run_experiment(feature_set, excel_path):
 
     import joblib
     joblib.dump(model, 'groceries_classifier_model.pkl')
-
-
-
-
-# #using cv2
-# def run_experiment(feature_set, excel_path):
-    
-#     # Load dataset with extracted features
-#     print('Loading dataset. This will take time ...')
-#     features, labels = load_dataset_from_excel(excel_path, feature_set)
-#     print('Finished loading dataset.')
-    
-#     # Since we don't want to know the performance of our classifier on images it has seen before
-#     # we are going to withhold some images that we will test the classifier on after training 
-#     train_features, test_features, train_labels, test_labels = train_test_split(
-#         features, labels, test_size=0.2, random_state=random_seed)
-    
-#     # Create SVM model
-#     svm = cv2.ml.SVM_create()
-#     svm.setKernel(cv2.ml.SVM_LINEAR)
-#     svm.setType(cv2.ml.SVM_C_SVC)
-#     svm.setC(1.0)
-#     label_encoder = LabelEncoder()
-#     train_labels = label_encoder.fit_transform(train_labels)
-#     # Convert training data to numpy arrays
-#     train_features = np.array(train_features, dtype=np.float32)
-#     train_labels = np.array(train_labels, dtype=np.int32)
-#     train_labels = train_labels.reshape(-1, 1)
-
-#     # Create TrainData object
-#     train_data = cv2.ml.TrainData_create(samples=train_features,
-#                                          layout=cv2.ml.ROW_SAMPLE,
-#                                          responses=train_labels)
-
-#     # Train the SVM model
-#     svm.train(train_data)
-
-#     # Save the trained model
-#     svm.save("svm_model.xml")
-
-#     # Test the model on images it hasn't seen before
-#     test_features = np.array(test_features, dtype=np.float32)
-
-#     _, predictions = svm.predict(test_features)
-
-#     # Convert predicted labels back to original class labels
-#     predicted_labels = label_encoder.inverse_transform(predictions.astype(int).flatten())
-
-#     # Calculate accuracy
-#     accuracy = np.mean(predicted_labels == test_labels)
-#     print('SVM accuracy:', accuracy * 100, '%')
 
 
 
