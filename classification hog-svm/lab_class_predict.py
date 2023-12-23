@@ -64,7 +64,7 @@ model = joblib.load('groceries_classifier_model.pkl')
 
 
 # Assuming your test images are in a folder named 'test_dataset'
-test_dataset_path = r'../dataset/test'
+test_dataset_path = r'../dataset/test/preproc'
 evaluate_model(model, test_dataset_path)
 
 

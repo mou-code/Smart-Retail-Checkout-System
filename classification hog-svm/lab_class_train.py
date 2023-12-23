@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-path_to_dataset = r'../dataset/train/pos_imgs/cropped'
+path_to_dataset = r'../dataset/train/pos_imgs/preproc'
 target_img_size = (32, 32) # fix image size because classification algorithms THAT WE WILL USE HERE expect that
 
 # We are going to fix the random seed to make our experiments reproducible 
@@ -18,53 +18,6 @@ random.seed(random_seed)
 np.random.seed(random_seed)
 
 
-def crop_and_save_images(contour_file, input_image_folder, output_folder):
-    # Read contours from the text file
-    with open(contour_file, 'r') as file:
-        lines = file.readlines()
-
-    for line in lines:
-        parts = line.split()
-        image_name = parts[0]
-        num_objects = int(parts[1])
-        x, y, w, h = map(int, parts[1:5])
-
-        # Read the original image
-        image_path = os.path.join(input_image_folder, image_name)
-        original_image = cv2.imread(image_path)
-
-
-
-        if original_image is None:
-            print(f"Error reading image: {image_path}")
-            continue
-
-        for i in range(num_objects):
-            x, y, w, h = map(int, parts[2 + i * 4: 6 + i * 4])
-            cropped_image = original_image[y:y+h, x:x+w]
-            if cropped_image.size == 0:
-                print(f"Error cropping image: {image_path}")
-                continue
-        # Crop the region defined by the contour
-        # cropped_image = original_image[y:h, x:w]
-
-
-        # Save the cropped image to the output folder
-        output_path = os.path.join(output_folder, image_name)
-        cv2.imwrite(output_path, cropped_image)
-        print(f"Saved: {output_path}")
-
-# if __name__ == "__main__":
-#     # Adjust the paths and directories
-#     contour_file_path = r'../dataset/HD/zaza/HDzaza.txt'
-#     input_image_folder_path = r'../dataset/HD/zaza'
-#     output_folder_path = r'../dataset/train/pos_imgs/croppedHD/zaza'
-
-#     # Create the output folder if it doesn't exist
-#     os.makedirs(output_folder_path, exist_ok=True)
-
-#     # Call the function to crop and save images
-#     crop_and_save_images(contour_file_path, input_image_folder_path, output_folder_path)
 
 
 def extract_hog_features(img):
@@ -84,7 +37,7 @@ def extract_hog_features(img):
 
 
 
-def load_dataset_from_excel(excel_path, feature_set='hog'):
+def load_dataset_from_excel(excel_path):
     features = []
     labels = []
 
@@ -98,8 +51,8 @@ def load_dataset_from_excel(excel_path, feature_set='hog'):
         path = os.path.join(path_to_dataset,label, fn)
         img = cv2.imread(path)
 
-        if feature_set == 'hog':
-            features.append(extract_hog_features(img))
+        
+        features.append(extract_hog_features(img))
         # Add other feature extraction methods if needed
 
         labels.append(label)
@@ -112,11 +65,11 @@ def load_dataset_from_excel(excel_path, feature_set='hog'):
     return features, labels
       
 
-def run_experiment(feature_set, excel_path):
+def run_experiment(excel_path):
     
     # Load dataset with extracted features
     print('Loading dataset. This will take time ...')
-    features, labels = load_dataset_from_excel(excel_path, feature_set)
+    features, labels = load_dataset_from_excel(excel_path)
     print('Finished loading dataset.')
     
     # Since we don't want to know the performance of our classifier on images it has seen before
@@ -141,5 +94,5 @@ def run_experiment(feature_set, excel_path):
 
 
 excel_path = 'labels.xlsx'
-run_experiment('hog', excel_path)
+run_experiment(excel_path)
 
