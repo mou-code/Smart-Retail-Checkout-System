@@ -110,7 +110,7 @@ This is how to run the dataset preprocessing script:
     python .\dataset_preproc.py
 ```
 
-### 2. Model Training 
+#### 2. Model Training 
 This Python script conducts an image classification experiment using Histogram of Oriented Gradients (HOG) features and Support Vector Machine (SVM) for classification. The experiment utilizes the scikit-learn (sklearn), NumPy (numpy), OpenCV (cv2), and pandas (pandas) libraries. The goal is to train an SVM model to classify preprocessed images based on features extracted using the HOG descriptor.
 
 Ensure the required libraries (scikit-learn, NumPy, OpenCV, os, pandas) are installed.
@@ -123,7 +123,7 @@ This is how to run the model training script:
     python .\lab_class_train.py
 ```
 
-### 3. Test images preprocessing (output from detection stage)
+#### 3. Test images preprocessing (output from detection stage)
 This Python script utilizes the scikit-learn (sklearn), NumPy (numpy), OpenCV (cv2), and pandas libraries to preprocess test images (real-time step). The primary purpose is to enhance the test images to match the dataset after preprocessing for better model performance by applying various image processing techniques like Histogram Equalization and Image Filtering.
 
 Ensure the required libraries (scikit-learn, NumPy, OpenCV, os, pandas) are installed.
@@ -136,7 +136,7 @@ This is how to run the test images preprocessing script:
     python .\test_preproc.py
 ```
 
-### 4. Prediction stage
+#### 4. Prediction stage
 This Python script evaluates a trained image classification model using Histogram of Oriented Gradients (HOG) features and Support Vector Machine (SVM). The experiment utilizes the scikit-learn (sklearn), NumPy (numpy), OpenCV (cv2), and the joblib library for model loading. The model predicts labels for each test image and compares them to the ground truth. Accuracy is calculated based on correct predictions.
 
 Ensure the required libraries (scikit-learn, NumPy, OpenCV, os, pandas) are installed.
