@@ -161,7 +161,17 @@ This is how to run the prediction script:
 ## How to use our application
 
 ### Installation
-    
+
+#### Installing the Application
+
+##### Prerequisites
+Make sure you have [.NET SDK](https://dotnet.microsoft.com/download) installed on your machine.
+
+##### 1. Clone the Repository
+```bash
+git clone https://github.com/mou-code/Smart-Retail-Checkout-System
+
+Run the code
 
 ### Screenshots and usage
 
