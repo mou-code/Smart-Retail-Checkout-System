@@ -167,15 +167,15 @@ This is how to run the prediction script:
 
 - Video Capturing Window
 This window captures live video of the products, providing users with a real-time view.
-- Add Button
+- 
 The "Add" button allows users to add currently captured products to the receipt. This is a convenient feature for users to selectively include items they want.
-- Receipt Window
+- 
 The receipt window displays a list of added products along with their names and prices. This gives users a clear overview of their selected items.
-- Edit Product Amount
+- 
 - The ability to double-click on a product and change its amount is a useful feature. It allows users to customize the quantity of each product before finalizing the receipt.
-- Print Receipt
+- 
 The "Print" feature is a valuable addition, enabling users to get a hard copy of their receipt for record-keeping or other purposes.
-- Cancel Process:
+- 
 The "Cancel" option provides an exit strategy for users who want to abort the current session without completing the transaction. It enhances the overall user experience by allowing flexibility.
 
 ![WhatsApp Image 2023-12-25 at 23 16 58_e3ec2bd1](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/e6150301-29a2-4b76-bd84-40d3c38787e9)
