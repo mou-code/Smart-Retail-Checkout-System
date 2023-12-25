@@ -168,6 +168,8 @@ This is how to run the prediction script:
 
 ### Screenshots
 
+![WhatsApp Image 2023-12-25 at 23 16 58_e3ec2bd1](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/e6150301-29a2-4b76-bd84-40d3c38787e9)
+
 ![WhatsApp Image 2023-12-25 at 22 31 02_a09ac34e](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/f3656afb-dce7-43a4-877e-e0da5fd6f3b6)
 
 ![WhatsApp Image 2023-12-25 at 22 31 02_5efc7a13](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/36e35bf6-fd4a-4047-950b-ef1659e24260)
