@@ -12,7 +12,12 @@ provided, summarizing the purchased items and payment details, culminating
 in a seamless and accurate shopping experience.
 
 
-## Installation
+
+
+## Products Detection
+This section outlines the process followed to train an object detection model using the Viola-Jones algorithm. The workflow involves several key steps, ensuring a structured approach to achieve accurate and efficient results.
+
+#### Installation
 For the training phase of this project, it is essential to use OpenCV version 3.4.11. Please ensure that you have the correct version installed to maintain compatibility and achieve optimal results. You can download OpenCV version 3.4.11 from the following link:
 
 [Download OpenCV 3.4.11](https://sourceforge.net/projects/opencvlibrary/files/3.4.11/opencv-3.4.11-vc14_vc15.exe/download)
@@ -22,10 +27,6 @@ After this you can find the files we will need inside the following path
     
     opencv/build/x64/vc15/bin
 
-
-
-## Products Detection
-This section outlines the process followed to train an object detection model using the Viola-Jones algorithm. The workflow involves several key steps, ensuring a structured approach to achieve accurate and efficient results.
 
 #### 1. Data Collection
 In order to get the best possible set of images in less time,
