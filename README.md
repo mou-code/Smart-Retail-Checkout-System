@@ -170,6 +170,7 @@ Make sure you have [.NET SDK](https://dotnet.microsoft.com/download) installed o
 ##### 1. Clone the Repository
 ```bash
 git clone https://github.com/mou-code/Smart-Retail-Checkout-System
+```
 
 Run the code
 
