@@ -149,9 +149,6 @@ This is how to run the prediction script:
     python .\lab_class_predict.py
 ```
 
-## References
-
- - Umer, S., Mohanta, P.P., Rout, R.K. et al. Machine learning method for cosmetic product recognition: a visual searching approach. Multimed Tools Appl 80, 34997–35023 (2021). https://doi.org/10.1007/s11042-020-09079-y
 ## Authors
 
 - [@MostafaBinHani](https://github.com/MostafaBinHani)
