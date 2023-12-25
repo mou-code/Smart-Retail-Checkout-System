@@ -200,3 +200,11 @@ The "Cancel" option provides an exit strategy for users who want to abort the cu
 
 ![WhatsApp Image 2023-12-25 at 22 31 02_5efc7a13](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/36e35bf6-fd4a-4047-950b-ef1659e24260)
 
+### Test cases
+
+You can find the test cases used to evaluate this project here:
+testcase1: [link](https://wetransfer.com/downloads/0172fd47f96bc3eb69cdf61a23a7f8ab20231225132019/4973b1)
+testcase2: [link](https://wetransfer.com/downloads/b2ba18d018fb82e71105fb47a07de44820231225154318/b9e419)
+
+
+
