@@ -164,16 +164,11 @@ This is how to run the prediction script:
 ## How to use our application
 
 ### Installation
-
-todo
     
-### Running Tests
-
-todo
-### Usage/Examples
-
-todo
 
 ### Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![WhatsApp Image 2023-12-25 at 22 31 02_a09ac34e](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/f3656afb-dce7-43a4-877e-e0da5fd6f3b6)
+
+![WhatsApp Image 2023-12-25 at 22 31 02_5efc7a13](https://github.com/mou-code/Smart-Retail-Checkout-System/assets/97397431/36e35bf6-fd4a-4047-950b-ef1659e24260)
+
